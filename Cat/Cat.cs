@@ -8,7 +8,7 @@ namespace Cat
 {
     public class Cat
     {
-        public string fact { get; set; }
-        public int length { get; set; }
+        public string Fact { get; set; }
+        public int Length { get; set; }
     }
 }

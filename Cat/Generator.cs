@@ -9,12 +9,13 @@ namespace Cat
         public async Task<Cat> Generate()
         {
             const string url = "https://catfact.ninja/fact";
-            HttpClient client = new();
-            var httpresponse = await client.GetAsync(url);
-            var jsonstring = await httpresponse.Content.ReadAsStringAsync();
-            var value = JsonConvert.DeserializeObject<Cat>(jsonstring);
-            return value;
-          
+            using (HttpClient client = new())
+            {
+                var jsonstring = await client.GetStringAsync(url);
+                var value = JsonConvert.DeserializeObject<Cat>(jsonstring);
+                return value;
+            }
+           
         }
 
     }

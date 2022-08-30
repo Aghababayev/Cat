@@ -15,7 +15,7 @@ namespace Cat
             {
                 Generator generator = new();
                 var data = generator.Generate();
-                Console.WriteLine(" \nfact: {0} length:{1} ", data.Result.fact, data.Result.length);
+                Console.WriteLine(" \nfact: {0} length:{1} ", data.Result.Fact, data.Result.Length);
                 Console.Write("Press Escape (Esc) for exit or other key to continue... \n");
                 keyinfo = Console.ReadKey();
             } while (keyinfo.Key != ConsoleKey.Escape);
